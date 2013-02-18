@@ -4,6 +4,8 @@ import views
 
 urlpatterns = patterns(
     'plainPages.views',
-    (r'^$', views.aboutUs),
+    (r'aboutus$', views.aboutUs),
+    (r'achievements$', views.achievements),
+    (r'calendar$', views.calendar),
 )
 

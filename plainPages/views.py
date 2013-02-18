@@ -10,3 +10,15 @@ def aboutUs(request):
         'head_title': 'About Us',
     })
     return HttpResponse( template.render(var) )
+
+def achievements(request):
+    template = get_template('achievements.html')
+    var = Context({
+    })
+    return HttpResponse( template.render(var) )
+
+def calendar(request):
+    template = get_template('calendar.html')
+    var = Context({
+        })
+    return HttpResponse( template.render(var) )
