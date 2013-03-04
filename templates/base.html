@@ -33,6 +33,7 @@
         /* Set the fixed height of the footer here */
         #header, #footer
         {
+            position:relative;
             height: 100px;
             margin-top:50px;/* change hole page top */
         }
@@ -112,7 +113,8 @@
         
         #center
         {
-            height: 500px;
+            position:relative;
+            min-height: 500px;
         }
         
         #contents 
@@ -150,6 +152,13 @@
         $(function () {
             $("#menu").menu();
         });
+
+        function htmlDecode(input){
+            var e = document.createElement('div');
+            e.innerHTML = input;
+            return e.childNodes[0].nodeValue;
+        }
+
     </script>
 </head>
 <body>
@@ -192,17 +201,20 @@
                 <div id="menuBar" class="menu span1">
                     <ul id="menu">
                         <li><a href="/">Home</a></li>
-                        <li><a>About us</a>
+                        <li><a href="/">About us</a>
                             <ul>
                                 <li><a href="/plain/aboutus">소개</a></li>
                                 <li><a href="/plain/achievements">Achievements</a></li>
                             </ul>
                         </li>
-                        <li><a href="/board">게시판</a>
+                        <li><a href="/board/list/Notice/1">Notice</a>
+                        </li>
+                        <li><a href="/">Member</a>
                             <ul>
-                                <li><a href="/board/notice">공지</a></li>
-                                <li><a href="/board/member">멤버</a></li>
-                                <li><a href="/board/photo">사진</a></li>
+                                <li><a href="/board/list/Member/1">게시판</a></li>
+                                <li><a href="/board/list/Seminar/1">세미나</a></li>
+                                <li><a href="/">프로젝트</a></li>
+                                <li><a href="/board/list/Photo/1">사진</a></li>
                             </ul>
                         </li>
                         <li><a href="/material">물품관리</a>
